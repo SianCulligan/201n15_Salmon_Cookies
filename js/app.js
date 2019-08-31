@@ -53,7 +53,6 @@ Store.prototype.render = function(){
   tdEl.textContent = this.totalCookiesSoldPerDay;
   trEl.appendChild(tdEl);
 
-  
 };
 
 new Store('1st & Pike', 23, 65, 6.3);
@@ -81,7 +80,36 @@ function renderHeader(){
   trEl.appendChild(tdEl);
 }
 
+function renderFooter(){
+//create a footer id
+var tableEl = document.getElementById('tableFooter');
+var trEl = document.createElement('tr');
+tableEl.appendChild(trEl);
+
+var tdEl = document.createElement('td');
+tdEl.textContent = 'Total by hour:';
+trEl.appendChild(tdEl);
+
+var grandTotal = 
+}
+
+
+
+// //Create table data & loop through by hours, sum all hourly totals and return a sum
+// // var tdEl = document.createElement('td');
+
+// for(var i = 0; i < hours.length; i++){
+//     var grandTotal = allStoresArr[i] + allStoresArr[i+]
+//     tdEl = document.createElement('td');
+//     tdEl.textContent = grandTotal[i];
+//     trEl.appendChild(tdEl);
+//   }
+// }
+// // append to the dom
+
+
 renderHeader();
 for(var i = 0; i < allStoresArr.length; i++){
   allStoresArr[i].render();
 }
+renderFooter();
