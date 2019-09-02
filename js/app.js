@@ -115,15 +115,6 @@ function renderFooter(){
   trEl.appendChild(tdEl);
 }
 
-
-
-
-
-
-
-
-// TODO: Add button to the bottom that .pop's a store
-
 function addAStore (event){
   event.preventDefault();
   var location = event.target.locationName.value;
@@ -139,18 +130,14 @@ function addAStore (event){
   for(var i = 0; i < allStoresArr.length; i++){
     allStoresArr[i].render();
   }
-  
+
 }
 
-
-// var username = e.target.username.value;
 renderHeader();
 for(var i = 0; i < allStoresArr.length; i++){
   allStoresArr[i].render();
 }
 renderFooter();
-
-// document.getElementById('addAStoreForm').addEventListener('submit', addAStore);
 
 
 formEl.addEventListener('submit', addAStore);
