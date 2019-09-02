@@ -14,6 +14,22 @@
 
         </header>
         <main>
+
+            <!-- form needs to have location name, min, maxm avg -->
+            <form id="addAStoreForm">
+                <fieldset>
+                    <label>Location Name:</label>
+                    <input name = "locationName" type = "text"/>
+                    <label>Minimum Customers:</label>
+                    <input name = "minimum" type = "text"/>
+                    <label>Maximum Customers:</label>
+                    <input name = "maximum" type = "text"/>
+                    <label>Average Cookies Per Customer:</label>
+                    <input name = "averageCookies" type = "text"/>
+
+                    <input type = "submit" name = "submit" value = "submit"/>
+                </fieldset>
+            </form>
         <table>
             <tbody id="storeList"></tbody>
             <tfoot id="tableFooter"></tfoot>
