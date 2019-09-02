@@ -5,6 +5,8 @@ var hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm
 var tableEl = document.getElementById('storeList');
 var allStoresArr = [];
 
+var formEl = document.getElementById('addAStoreForm');
+
 function Store(storeName, minCust, maxCust, averageCookiesPerCust){
   this.storeName = storeName;
   this.minCust = minCust;
@@ -80,36 +82,75 @@ function renderHeader(){
   trEl.appendChild(tdEl);
 }
 
+
 function renderFooter(){
 //create a footer id
-var tableEl = document.getElementById('tableFooter');
-var trEl = document.createElement('tr');
-tableEl.appendChild(trEl);
+  var tableEl = document.getElementById('tableFooter');
+  var trEl = document.createElement('tr');
+  tableEl.appendChild(trEl);
 
-var tdEl = document.createElement('td');
-tdEl.textContent = 'Total by hour:';
-trEl.appendChild(tdEl);
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Total by hour:';
+  trEl.appendChild(tdEl);
 
-var grandTotal = 
+  for(var h = 0; h < hours.length; h++){
+    var grandTotal = 0;
+    for(var s = 0; s < allStoresArr.length; s++){
+      grandTotal += allStoresArr[s].numbOfCookiesSoldEachHourArr[h];
+    }
+    tdEl = document.createElement('td');
+    tdEl.textContent = grandTotal;
+    trEl.appendChild(tdEl);
+  }
+
+  function allCookiesTotal(totalCookiesSoldPerDay){
+    var cookieTotal = 0;
+    for (var i = 0; i < totalCookiesSoldPerDay.length; i++){
+      cookieTotal+=totalCookiesSoldPerDay[i];
+    }
+    return cookieTotal;
+  }
+  tdEl = document.createElement('td');
+  tdEl.textContent = allCookiesTotal();
+  trEl.appendChild(tdEl);
 }
 
 
 
-// //Create table data & loop through by hours, sum all hourly totals and return a sum
-// // var tdEl = document.createElement('td');
-
-// for(var i = 0; i < hours.length; i++){
-//     var grandTotal = allStoresArr[i] + allStoresArr[i+]
-//     tdEl = document.createElement('td');
-//     tdEl.textContent = grandTotal[i];
-//     trEl.appendChild(tdEl);
-//   }
-// }
-// // append to the dom
 
 
+
+
+
+// TODO: Add button to the bottom that .pop's a store
+
+function addAStore (event){
+  event.preventDefault();
+  var location = event.target.locationName.value;
+  var min = event.target.minimum.value;
+  var max = event.target.maximum.value;
+  var avg = event.target.averageCookies.value;
+  console.log('AVERAGES', avg);
+
+  new Store(location, min, max, avg);
+  //clear entire table
+  tableEl.innerHTML='';
+  renderHeader();
+  for(var i = 0; i < allStoresArr.length; i++){
+    allStoresArr[i].render();
+  }
+  
+}
+
+
+// var username = e.target.username.value;
 renderHeader();
 for(var i = 0; i < allStoresArr.length; i++){
   allStoresArr[i].render();
 }
 renderFooter();
+
+// document.getElementById('addAStoreForm').addEventListener('submit', addAStore);
+
+
+formEl.addEventListener('submit', addAStore);
