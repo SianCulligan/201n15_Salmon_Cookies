@@ -93,25 +93,21 @@ function renderFooter(){
   tdEl.textContent = 'Total by hour:';
   trEl.appendChild(tdEl);
 
+  var grandGrandTotal = 0;
+
   for(var h = 0; h < hours.length; h++){
     var grandTotal = 0;
     for(var s = 0; s < allStoresArr.length; s++){
       grandTotal += allStoresArr[s].numbOfCookiesSoldEachHourArr[h];
     }
+    grandGrandTotal += grandTotal;
     tdEl = document.createElement('td');
     tdEl.textContent = grandTotal;
     trEl.appendChild(tdEl);
   }
 
-  function allCookiesTotal(totalCookiesSoldPerDay){
-    var cookieTotal = 0;
-    for (var i = 0; i < totalCookiesSoldPerDay.length; i++){
-      cookieTotal+=totalCookiesSoldPerDay[i];
-    }
-    return cookieTotal;
-  }
   tdEl = document.createElement('td');
-  tdEl.textContent = allCookiesTotal();
+  tdEl.textContent = grandGrandTotal;
   trEl.appendChild(tdEl);
 }
 
@@ -138,6 +134,5 @@ for(var i = 0; i < allStoresArr.length; i++){
   allStoresArr[i].render();
 }
 renderFooter();
-
 
 formEl.addEventListener('submit', addAStore);
