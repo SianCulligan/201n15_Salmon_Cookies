@@ -65,7 +65,6 @@ new Store('Alki', 23, 65, 6.3);
 
 function renderHeader(){
   var trEl = document.createElement('tr');
-  tableEl.appendChild(trEl);
 
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Location';
@@ -80,12 +79,14 @@ function renderHeader(){
   tdEl = document.createElement('td');
   tdEl.textContent = 'Daily Location Total';
   trEl.appendChild(tdEl);
+  tableEl.appendChild(trEl);
 }
 
 
 function renderFooter(){
 //create a footer id
-  var tableEl = document.getElementById('tableFooter');
+  // var tableEl = document.getElementById('tableFooter');
+  var tfootEl = document.createElement ('tfoot');
   var trEl = document.createElement('tr');
   tableEl.appendChild(trEl);
 
@@ -93,22 +94,24 @@ function renderFooter(){
   tdEl.textContent = 'Total by hour:';
   trEl.appendChild(tdEl);
 
-  var grandGrandTotal = 0;
+  var grandTotal = 0;
 
   for(var h = 0; h < hours.length; h++){
-    var grandTotal = 0;
+    var total = 0;
     for(var s = 0; s < allStoresArr.length; s++){
-      grandTotal += allStoresArr[s].numbOfCookiesSoldEachHourArr[h];
+      total += allStoresArr[s].numbOfCookiesSoldEachHourArr[h];
     }
-    grandGrandTotal += grandTotal;
+    grandTotal += total;
     tdEl = document.createElement('td');
-    tdEl.textContent = grandTotal;
+    tdEl.textContent = total;
     trEl.appendChild(tdEl);
   }
 
   tdEl = document.createElement('td');
-  tdEl.textContent = grandGrandTotal;
+  tdEl.textContent = grandTotal;
   trEl.appendChild(tdEl);
+  tfootEl.appendChild(trEl);
+  tableEl.appendChild(tfootEl);
 }
 
 function addAStore (event){
@@ -126,7 +129,7 @@ function addAStore (event){
   for(var i = 0; i < allStoresArr.length; i++){
     allStoresArr[i].render();
   }
-
+  renderFooter();
 }
 
 renderHeader();
