@@ -17,7 +17,7 @@ function Store(storeName, minCust, maxCust, averageCookiesPerCust){
   this.numbOfCookiesSoldEachHourArr = [];
   Store.prototype.calcNumbOfCustPerHour = function () {
     for (var i = 0; i < hours.length; i++) {
-      var cust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+      var cust = parseInt(Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
       this.numbOfCustPerHourArr.push(cust);
     }
   };
@@ -26,7 +26,7 @@ function Store(storeName, minCust, maxCust, averageCookiesPerCust){
     console.log(this.numbOfCustPerHourArr);
     var cookiesPerHour = 0;
     for (var i = 0; i < this.numbOfCustPerHourArr.length; i++) {
-      cookiesPerHour = Math.ceil(this.numbOfCustPerHourArr[i] * this.averageCookiesPerCust);
+      cookiesPerHour = parseInt(Math.ceil(this.numbOfCustPerHourArr[i] * this.averageCookiesPerCust));
       console.log(cookiesPerHour);
       this.numbOfCookiesSoldEachHourArr.push(cookiesPerHour);
       this.totalCookiesSoldPerDay += cookiesPerHour;
@@ -48,7 +48,7 @@ Store.prototype.render = function(){
 
   for(var i = 0; i <this.numbOfCookiesSoldEachHourArr.length; i++){
     tdEl = document.createElement('td');
-    tdEl.textContent = this.numbOfCookiesSoldEachHourArr[i];
+    tdEl.textContent = parseInt(this.numbOfCookiesSoldEachHourArr[i]);
     trEl.appendChild(tdEl);
   }
   tdEl = document.createElement('td');
@@ -84,8 +84,6 @@ function renderHeader(){
 
 
 function renderFooter(){
-//create a footer id
-  // var tableEl = document.getElementById('tableFooter');
   var tfootEl = document.createElement ('tfoot');
   var trEl = document.createElement('tr');
   tableEl.appendChild(trEl);
@@ -117,13 +115,12 @@ function renderFooter(){
 function addAStore (event){
   event.preventDefault();
   var location = event.target.locationName.value;
-  var min = event.target.minimum.value;
-  var max = event.target.maximum.value;
-  var avg = event.target.averageCookies.value;
+  var min = parseInt(event.target.minimum.value);
+  var max = parseInt(event.target.maximum.value);
+  var avg = parseInt(event.target.averageCookies.value);
   console.log('AVERAGES', avg);
 
   new Store(location, min, max, avg);
-  //clear entire table
   tableEl.innerHTML='';
   renderHeader();
   for(var i = 0; i < allStoresArr.length; i++){
