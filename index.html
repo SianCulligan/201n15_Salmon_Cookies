@@ -2,67 +2,85 @@
 
 <html>
     <head>
+        <title>Pat's Salmon Cookies</title>
+        <link rel="icon" href="img/fish.jpg" type="image/gif" sizes="16x16">
         <link href="css/reset.css" type="text/css" rel="stylesheet">
-        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/public.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1>Pat's Salmon Cookies</h1>
-            <img id="logo" src = "https://via.placeholder.com/300x100" alt = "Salmon">
-            <nav><a>Locations.</a></nav>
-            <nav><a>Hours.</a></nav>
-            <nav><a>Fishtory.</a></nav>
-            <nav><a>Merch.</a></nav>
-            <nav><a>Events.</a></nav>
+            <section id="nav">
+            <nav><a href = "#locations">Locations.</a></nav>
+            
+            <nav><a href = "#hours">Hours.</a></nav>
+            <nav><a href = "#history">Fishtory.</a></nav>
+            <nav><a href = "#shop">Merch.</a></nav>
+            <nav><a href = "sales.html">Cookies Per Day.</a></nav>
+            </section>
+            
+            <section id="head">
+                <img id="logo" src = "img/salmon.png" alt = "Salmon">
+                <h1 class="compName">Pat's Salmon Cookies</h1>
+            </section>
+
         </header>
         <main>
-            <img id="hero" src="https://via.placeholder.com/960x450/000"/>
-            
+            <section class="heroImg">
+                <img class="hero" src="img/family.jpg">
+                <p class="loveem">Love 'em or hate 'em, someone's still eating them.</p>
+            </section>
+
             <section class="section">
-                <img class="locations" src="https://via.placeholder.com/800x100/000"/>
-                <div class="locationOne" class="locationname">1st & Pike</div>
-                <div class="locationOne" class="address">92374 1st St.</div>
-                <div class="locationOne" class="phone">206-923-8385</div>
-                
-                <div class="locationTwo" class="locationname">SeaTac Airport</div>
-                <div class="locationTwo" class="address">342 Airport Dr.</div>
-                <div class="locationTwo" class="phone">206-749-8302</div>
-                
-                <div class="locationThree" class="locationname">Seattle Center</div>
-                <div class="locationThree" class="address">234 Center Of Seattle Pl.</div>
-                <div class="locationThree" class="phone">942-834-0234</div>
-
-                <div class="locationFour" class="locationname">Capitol Hill</div>
-                <div class="locationFour" class="address">3999 Hipster Way</div>
-                <div class="locationFour" class="phone">206-867-5309</div>
-
-                <div class="locationFive" class="locationname">Alki</div>
-                <div class="locationFive" class="address">48189 Beach Wave Rd.</div>
-                <div class="locationFive" class="phone">206-858-9284</div>
+                <h2 id ="locations">Where ya at, Pat?</h2> 
+                <div id = "stores">
+                    <p class = "things">
+                        <div class="locationname">1st & Pike</div>
+                        <div class="address">92374 1st St.</div>
+                        <div class="phone">206-923-8385</div>
+                    </p>
+                    <p>
+                        <div class="locationname">SeaTac Airport</div>
+                        <div class="address">342 Airport Dr.</div>
+                        <div class="phone">206-749-8302</div>
+                    </p>
+                    <p class = "things">                
+                        <div class="locationname">Seattle Center</div>
+                        <div class="address">234 Center Of Seattle Pl.</div>
+                        <div class="phone">942-834-0234</div>
+                    </p>    
+                    <p class = "things">
+                        <div  class="locationname">Capitol Hill</div>
+                        <div  class="address">3999 Hipster Way</div>
+                        <div  class="phone">206-867-5309</div>
+                    </p>
+                    <p class = "things">
+                        <div  class="locationname">Alki</div>
+                        <div  class="address">48189 Beach Wave Rd.</div>
+                        <div  class="phone">206-858-9284</div>
+                    </p>
+                </div>
                 </section>
                 
-                <section class="section">
-                    <img class="hours" src="https://via.placeholder.com/800x100/000"/>
-                    <div class="hourTitle">All Locations:</div>
-                    <div class="actualHours">6:00am - 8:00pm</div>
+                <section class="hoursSection">
+                    <h2 id = "hours">Hours.</h2> 
+                    <div>All Locations:</div>
+                    <div>6:00am - 8:00pm</div>
                 </section>
                 
-                <section class="section">
-                    <img class="history" src="https://via.placeholder.com/800x100/000"/>
-                    <p class="story">A Seattle icon since 2019, Pat's Salmon cookies specializes in cookies made into the shape of a salmon, and actually made with salmon. The fish is ground up so fine that you can't even taste it which makes for an ideal match for a steaming cup of coffee on a gray Seattle morning. Or gray Seattle afternoon... whatever.</p>
+                <section class="aboutSection">
+                    <h2 id = "history">Fishtory.</h2> 
+                    <p>A Seattle icon since 2019, Pat's Salmon cookies specializes in cookies made into the shape of a salmon, and actually made with salmon. The fish is ground up so fine that you can't even taste it which makes for an ideal match for a steaming cup of coffee on a gray Seattle morning. Or gray Seattle afternoon... whatever.</p>
+                    <img src="img/chinook.jpg"/>
                 </section>
 
-                <section class="section">
-                    <img class="merch" src="https://via.placeholder.com/800x100/000"/>
-                    <div class="slogan">Like our cookies? You'll love our merch! Available for the whole family!</div>
-                    <img class="cutter" src="https://via.placeholder.com/300x375/000"/>
-                    <img class="family" src="https://via.placeholder.com/300x375/000"/>
-                    <img class="shirt" src="https://via.placeholder.com/300x375/000"/>
-                </section>
-
-                <section class="section">
-                    <img class="events" src="https://via.placeholder.com/800x100/000"/>
-                    <p class="story">A Seattle icon since 2019, Pat's Salmon cookies specializes in cookies made into the shape of a salmon, and actually made with salmon. The fish is ground up so fine that you can't even taste it which makes for an ideal match for a steaming cup of coffee on a gray Seattle morning. Or gray Seattle afternoon... whatever.</p>
+                <section>
+                    <h2>Shop.</h2> 
+                    <div id = "shop" class="shopSection">
+                        <p>Like our cookies? You'll love our merch! Available for the whole family!
+                        <img class="shopImg" src="img/cutter.jpeg"/>
+                        <img class="shopImg" src="img/frosted-cookie.jpg"/>
+                        <img class="shopImg" src="img/shirt.jpg"/>
+                    </div>
                 </section>
         </main>
         <footer></footer>

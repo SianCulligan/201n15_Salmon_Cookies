@@ -1,0 +1,135 @@
+html {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+body {
+    background: url(https://images.unsplash.com/photo-1457092716468-97352752b749?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2186&q=80);  
+}
+
+#nav {
+    display: block;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-shadow: 
+        -1px -1px 0 rgb(255, 255, 255),
+        1px -1px 0 rgb(255, 255, 255),
+        -1px 1px 0 rgb(255, 255, 255),
+        1px 1px 0 rgb(255, 255, 255);
+}
+
+nav {
+    display: inline-block;
+    padding: 10px 35px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    color: black;
+}   
+
+nav:hover{
+    transition: 1s;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+h1, .loveem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    font-weight: bolder;
+}
+
+h1{
+    font-size: 40px;
+    color: whitesmoke;
+}
+
+.loveem {
+    font-size: 33px;
+}
+
+.heroImg, #head {
+    position: relative; 
+    text-align: center;
+    width: 960px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color:wheat;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    margin-bottom: 44px;
+}
+
+.hero, #logo {
+    border: 10px solid rgb(163, 91, 91);
+    margin-bottom: 30px;
+}
+
+.locationname {
+    font-weight: bold;
+    margin-top: 11%;
+}
+
+#stores {
+    width: 500px;
+    height: 200px;
+    overflow: scroll;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10%;
+}
+
+h2 {
+    width: 960px;
+    text-align: center;
+    color: rgb(44, 54, 32);
+    font-size: 44px;
+    text-shadow: 
+        -1px -1px 0 rgb(255, 255, 255),
+        1px -1px 0 rgb(255, 255, 255),
+        -1px 1px 0 rgb(255, 255, 255),
+        1px 1px 0 rgb(255, 255, 255);
+    background-image: linear-gradient(to right, rgba(214, 214, 214, 0.404), rgb(163, 91, 91), rgb(214, 214, 214, 0.404));
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.hoursSection, .aboutSection, .shopSection {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.445); 
+}
+
+.hoursSection{
+    font-size: 55px;
+}
+
+.aboutSection, .shopSection {
+    font-size: 20px;
+}
+
+.shopImg {
+    margin-top: 10px;
+    width: 300px;
+    height: 350px;
+}
