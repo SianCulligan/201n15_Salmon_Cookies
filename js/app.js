@@ -54,7 +54,6 @@ Store.prototype.render = function(){
   tdEl = document.createElement('td');
   tdEl.textContent = this.totalCookiesSoldPerDay;
   trEl.appendChild(tdEl);
-
 };
 
 new Store('1st & Pike', 23, 65, 6.3);
@@ -134,5 +133,4 @@ for(var i = 0; i < allStoresArr.length; i++){
   allStoresArr[i].render();
 }
 renderFooter();
-
 formEl.addEventListener('submit', addAStore);
